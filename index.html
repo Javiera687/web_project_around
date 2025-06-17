@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página Interactiva" />
+    <meta name="keywords" content="interacción, agregar o quitat imágenes, dar me gusta" />
+    <meta name="author" content="Javiera Garrido" />
+    <title>Alrededor de los EE.UU.</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+</head>
+<body>
+  <div class="page">
+      <div class="popup">
+        <button type="button" class="popup__button popup__button_close">
+          &#x1F7A9;
+        </button>
+        <form action="" class="popup__container">
+          <h2 class="popup__subtitle">Editar perfil</h2>
+          <fieldset class="popup__content">
+            <input
+              type="text"
+              class="popup__input popup__input_name"
+              placeholder="Nombre"
+            />
+            <input
+              type="text"
+              class="popup__input popup__input_about"
+              placeholder="Acerca de mi"
+            />
+          </fieldset>
+          <fieldset class="popup__content">
+            <button type="submit" class="popup__button popup__button_save">
+              Guardar
+            </button>
+          </fieldset>
+        </form>
+      </div>
+      <header class="header">
+        <img src="./images/Vector.png" alt="logo-page" class="header__image" />
+      </header>
+      <main class="main">
+        <div class="main__profile">
+          <div class="main__content-image">
+            <img
+              src="./images/Jacques-Cousteau.jpg"
+              alt="profile-image"
+              class="main__profile-image"
+            />
+          </div>
+          <div class="main__content-paragraph">
+            <p class="main__paragraph main__paragraph_name">Jacques Costeau</p>
+            <p class="main__paragraph main__paragraph_about">Explorador</p>
+            <button type="button" class="main__button main__button_edit">
+              &#x1F58C;
+            </button>
+          </div>
+          <button type="button" class="main__button main__button_add">
+            &#x1F7A3;
+          </button>
+        </div>
+        <div class="main__gallery">
+          <div class="main__gallery-card">
+            <img
+              src="./images/Yosemite.jpg"
+              alt="valle-yosemite"
+              class="main__gallery-image"
+            />
+            <div class="main__gallery-content">
+              <p class="main__gallery-paragraph">Valle de Yosemite</p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/like.png"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="main__gallery-card">
+            <img
+              src="./images/Lago-Louise.jpg"
+              alt="lago-louise"
+              class="main__gallery-image"
+            />
+            <div class="main__gallery-content">
+              <p class="main__gallery-paragraph">Lago Louise</p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/like.png"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="main__gallery-card">
+            <img
+              src="./images/Calvas-Mount.jpg"
+              alt="Calvas-Mount"
+              class="main__gallery-image"
+            />
+            <div class="main__gallery-content">
+              <p class="main__gallery-paragraph">Montañas Calvas</p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/like.png"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="main__gallery-card">
+            <img
+              src="./images/Latemar.jpg"
+              alt="Latemar"
+              class="main__gallery-image"
+            />
+            <div class="main__gallery-content">
+              <p class="main__gallery-paragraph">Latemar</p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/like.png"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="main__gallery-card">
+            <img
+              src="./images/Vanois.jpg"
+              alt="Vanois-National-Park"
+              class="main__gallery-image"
+            />
+            <div class="main__gallery-content">
+              <p class="main__gallery-paragraph">Vanois National Park</p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/like.png"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="main__gallery-card">
+            <img
+              src="./images/Lago-di-Braises.jpg"
+              alt="Lago-di-Braies"
+              class="main__gallery-image"
+            />
+            <div class="main__gallery-content">
+              <p class="main__gallery-paragraph">Lago di Braies</p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/like.png"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&#x00a9; 2024 Around The U.S.</p>
+      </footer>
+    </div>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
