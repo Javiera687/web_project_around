@@ -5,7 +5,7 @@
 }
 
 .main__profile {
-   display: grid;
+  display: grid;
   grid-template-columns: 120px repeat(3, 1fr);
   grid-template-rows: 120px;
   grid-gap: 30px;
@@ -70,17 +70,21 @@
 }
 
 .main__button_edit {
+  position: absolute;
   width: 24px;
   height: 24px;
   margin-bottom: 7px;
-  top: 196px;
-  left: 741px;
+  top: 208px;
+  left: 706px;
   align-self: end;
 }
 
 .main__button_add {
- width: 150px;
+position: absolute;
+width: 150px;
 height: 50px;
+top: 208px;
+right: 187px;
 align-self: end;
   
 }
@@ -94,13 +98,15 @@ align-self: end;
 
 .main__gallery-card {
   position: relative;
-  max-width: 290px;
+  height: 360px;
+  width: 282px;
   background-color: #fff;
   color: #000;
   border-radius: 10px;
 }
 
 .main__gallery-image {
+  height: 282px;
   width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
