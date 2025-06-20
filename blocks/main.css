@@ -123,6 +123,9 @@ align-self: end;
   font-family: "Inter-Black", sans-serif;
   font-size: 24px;
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .main__gallery-paragraph_text_overflow {

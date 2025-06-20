@@ -8,8 +8,8 @@ let popupInputName = document.querySelector(".popup__input_name");
 let popupInputAbout = document.querySelector(".popup__input_about");
 
 function handleOpenEdit () {
- mainParagraphName.value = mainParagraphName.textContent;
- mainParagraphAbout.value = mainParagraphAbout.textContent;
+ popupInputName.value = mainParagraphName.textContent;
+ popupInputAbout.value = mainParagraphAbout.textContent;
  popup.classList.toggle("popup_opened");
 console.log ("Debe abrir el popup!");
 }
@@ -18,10 +18,10 @@ mainButtonEdit.addEventListener("click", handleOpenEdit);
 popupButtonClose.addEventListener("click", handleOpenEdit);
 
 function saveChange(e) { 
-    e.preventDeFault();
-    popupInputName.textContent = popupInputName.value;
-    popupInputAbout.textContent = popupInputAbout.value;
-    openEdit();
+    e.preventDefault();
+    mainParagraphName.textContent = popupInputName.value;
+    mainParagraphAbout.textContent = popupInputAbout.value;
+    popup.classList.remove("popup_opened");
 }
 
 popupContainer.addEventListener("submit", saveChange);
