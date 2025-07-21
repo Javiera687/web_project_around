@@ -90,10 +90,15 @@ align-self: end;
 }
 
 .main__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
   max-width: 880px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px 17px;
+  position: absolute;
+  top: 329px;
+  left: 199px;
 }
 
 .main__gallery-card {

@@ -13,7 +13,7 @@
 }
 
 .popup_opened {
-  display: block;
+  display: flex;
 }
 
 .popup__button {

@@ -2,6 +2,9 @@
   max-width: 880px;
   margin: 60px auto;
   color: #545454;
+  position: relative;
+  top: 735px;
+  left: 5px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 584px) {

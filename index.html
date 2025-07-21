@@ -11,8 +11,8 @@
 </head>
 <body>
   <div class="page">
-      <div class="popup">
-        <button type="button" class="popup__button popup__button_close">
+      <div class="popup popup--edit-profile" id="popupEditProfile">
+        <button type="button" class="popup__button popup__button_close" id="closeEditProfileBtn">
           &#x1F7A9;
         </button>
         <form class="popup__container">
@@ -20,11 +20,13 @@
           <fieldset class="popup__content">
             <input
               type="text"
+              id="input-name-profile"
               class="popup__input popup__input_name"
               placeholder="Nombre"
             />
             <input
               type="text"
+              id="input-about-profile"
               class="popup__input popup__input_about"
               placeholder="Acerca de mi"
             />
@@ -55,9 +57,36 @@
               &#x1F58C;
             </button>
           </div>
-          <button type="button" class="main__button main__button_add">
-            &#x1F7A3;
-          </button>
+          <button type="button" class="main__button main__button_add">&#x1F7A3;</button>
+          <div class="popup popup--add-place" id="popupAddPlace">
+         <button type="button" class="popup__button popup__button_close" id="closeAddPlaceBtn">
+          &#x1F7A9;
+        </button>
+           <form class="popup__container popup__form popup__form_add" name="add-form">
+          <h2 class="popup__subtitle">Nuevo lugar</h2>
+          <fieldset class="popup__content">
+            <input
+              type="text"
+              id="input-title-place"
+              class="popup__input popup__input_place"
+              name="place"
+              placeholder="Título"
+              required
+            />
+            <input
+              type="url"
+              id="input-url-place"
+              class="popup__input popup__input_url"
+              placeholder="Enlace de la imagen"
+              required
+            />
+          </fieldset>
+          <fieldset class="popup__content">
+            <button type="submit" class="popup__button popup__button_save">
+              Crear
+            </button>
+          </fieldset>
+        </form>
         </div>
         <div class="main__gallery">
           <div class="main__gallery-card">
