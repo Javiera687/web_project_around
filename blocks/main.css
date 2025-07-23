@@ -93,7 +93,6 @@ align-self: end;
   display: grid;
   grid-template-columns: repeat(3, 2fr);
   max-width: 880px;
-  display: flex;
   flex-wrap: wrap;
   gap: 20px 17px;
   position: absolute;
@@ -139,6 +138,12 @@ align-self: end;
   overflow: hidden;
 }
 
+.main__gallery-like {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+}
+
 .main__button_like {
   border: none;
   height: 19px;
@@ -157,9 +162,8 @@ border: none;
 .main__button_remove_active {
   background-image: url(../images/trash.png);
 }
-.main__button_like_active {
-  background-image: url(../images/Vector-like-active.svg);
-}
+
+
 
 @media screen and (min-width: 320px) and (max-width: 584px) {
   .main__profile {

@@ -1,4 +1,5 @@
 
+/*
 let mainButtonEdit = document.querySelector(".main__button_edit");
 let popupEditProfile = document.querySelector(".popup--edit-profile");
 let popupContainer = popupEditProfile.querySelector(".popup__container");
@@ -11,6 +12,7 @@ const templateCard = document.querySelector("#template-card");
 const sectionCards = document.querySelector(".cards");
 const popupImage = document.querySelector(".popup__image");
 const initialCards = [
+
   {
     name: "Valle de Yosemite",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg"
@@ -161,3 +163,127 @@ document.querySelectorAll(".main__button_like").forEach((button) => {
   button.addEventListener("click", () => toggleLike(button));
 });
 
+*/
+
+let mainButtonEdit = document.querySelector(".main__button_edit");
+let popupEditProfile = document.querySelector(".popup--edit-profile");
+let popupContainer = popupEditProfile.querySelector(".popup__container");
+
+let mainParagraphName = document.querySelector(".main__paragraph_name");
+let mainParagraphAbout = document.querySelector(".main__paragraph_about");
+let popupInputName = document.getElementById("input-name-profile");
+let popupInputAbout = document.getElementById("input-about-profile");
+const templateCard = document.querySelector("#template-card");
+const sectionCards = document.querySelector(".main__gallery");
+const popupImage = document.querySelector(".popup__image");
+const initialCards = [
+
+  {
+    name: "Valle de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg"
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg"
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg"
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg"
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg"
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg"
+  }
+];
+
+initialCards.forEach(function(item) {
+    createCard(item.name, item.link);
+});
+
+function createCard(tittle, link) {
+   const card = templateCard.content.querySelector(".main__gallery-card").cloneNode(true);
+
+   const cardTitle = card.querySelector(".main__gallery-paragraph");
+   cardTitle.textContent = tittle;
+
+   const cardImage = card.querySelector(".main__gallery-image");
+   cardImage.src = link;
+   cardImage.alt = 'Imagen de ${tittle}';
+
+   const likeButton = card.querySelector(".main__button_like");
+   const likeIcon = card.querySelector(".main__gallery-like");
+
+   likeButton.addEventListener("click", function () {
+    likeButton.classList.toggle("main__button_like_active");
+
+    if (likeButton.classList.contains("main__button_like_active")){
+      likeIcon.src = "./images/likeblack.png";
+    } else { 
+      likeIcon.src = "./images/like.png";
+    }
+
+   });
+   
+   const removeButton = card.querySelector(".main__gallery-remove");
+   removeButton.addEventListener("click", function () {
+    const cardElement = removeButton.closest(".main__gallery-card");
+    if (cardElement) { 
+      cardElement.remove();
+
+    }
+    
+   });
+
+     sectionCards.append(card);
+
+  }
+   
+   card.addEventListener("Click", function () {});
+   cardImage.addEventListener("click", function () {});
+  
+
+
+function handleOpenEdit() {
+  popupInputName.value = mainParagraphName.textContent;
+  popupInputAbout.value = mainParagraphAbout.textContent;
+  popupEditProfile.classList.add("popup_opened");
+}
+
+mainButtonEdit.addEventListener("click", handleOpenEdit);
+
+function saveChange(e) {
+  e.preventDefault();
+  mainParagraphName.textContent = popupInputName.value;
+  mainParagraphAbout.textContent = popupInputAbout.value;
+  popupEditProfile.classList.remove("popup_opened");
+}
+
+popupContainer.addEventListener("submit", saveChange);
+
+let popupAddPlace = document.querySelector(".popup--add-place");
+let popupAddPlaceOpenBtn = document.querySelector(".main__button_add");
+
+function handleOpenAddPlace() {
+  popupAddPlace.classList.add("popup_opened");
+}
+
+popupAddPlaceOpenBtn.addEventListener("click", handleOpenAddPlace);
+
+
+
+let allCloseButtons = document.querySelectorAll(".popup__button_close");
+
+allCloseButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const popup = btn.closest(".popup");
+    popup.classList.remove("popup_opened");
+  });
+});

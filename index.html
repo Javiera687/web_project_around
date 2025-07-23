@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./pages/index.css" />
 </head>
 <body>
-  <div class="page">
+  <div class="page page__container">
       <div class="popup popup--edit-profile" id="popupEditProfile">
         <button type="button" class="popup__button popup__button_close" id="closeEditProfileBtn">
           &#x1F7A9;
@@ -88,7 +88,9 @@
           </fieldset>
         </form>
         </div>
-        <div class="main__gallery">
+        <div class="main__gallery"></div>
+
+          <!-----
           <div class="main__gallery-card">
             <img
               src="./images/Yosemite.jpg"
@@ -112,6 +114,7 @@
               </button>
             </div>
           </div>
+
           <div class="main__gallery-card">
             <img
               src="./images/Lago-Louise.jpg"
@@ -228,11 +231,53 @@
             </div>
           </div>
         </div>
+    -->
+    
+     
       </main>
       <footer class="footer">
-        <p class="footer__copyright">&#x00a9; 2024 Around The U.S.</p>
+        <p class="footer__copyright">© 2024 Around The U.S.</p>
       </footer>
+
     </div>
+
+    <!-- Popup de imagen grande -->
+    <div class="popup" id="popupImg">
+      <button type="button" class="popup__exit" id="exitBtn">X</button> 
+      <div class="popup__container">
+        <img class="popup__image" />
+        <h2 class="popup__image-tittle"></h2>
+      </div>
+    </div>
+
+    <template id="template-card">
+      <div class="main__gallery-card">
+        <img
+          src="./images/Yosemite.jpg"
+          alt="valle-yosemite"
+          class="main__gallery-image"
+        />
+        <div class="main__gallery-content">
+          <p class="main__gallery-paragraph">Valle de Yosemite</p>
+          <button type="button" class="main__button main__button_like">
+            <img
+              src="./images/like.png"
+              alt="like"
+              class="main__gallery-like"
+            />
+          </button>
+          <button type="button" class="main__button main__button_remove">
+            <img
+              src="./images/trash.png"
+              alt="trash"
+              class="main__gallery-remove"
+            />
+          </button>
+        </div>
+      </div>
+    </template>
+
     <script src="./scripts/index.js"></script>
+
   </body>
 </html>
