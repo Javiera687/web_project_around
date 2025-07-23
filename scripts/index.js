@@ -167,6 +167,7 @@ document.querySelectorAll(".main__button_like").forEach((button) => {
 
 let mainButtonEdit = document.querySelector(".main__button_edit");
 let popupEditProfile = document.querySelector(".popup--edit-profile");
+const popupButtonClose = document.querySelector("#closeEditProfileBtn")
 let popupContainer = popupEditProfile.querySelector(".popup__container");
 
 let mainParagraphName = document.querySelector(".main__paragraph_name");
@@ -239,17 +240,13 @@ function createCard(tittle, link) {
       cardElement.remove();
 
     }
-    
+
    });
 
      sectionCards.append(card);
 
   }
    
-   card.addEventListener("Click", function () {});
-   cardImage.addEventListener("click", function () {});
-  
-
 
 function handleOpenEdit() {
   popupInputName.value = mainParagraphName.textContent;
@@ -270,6 +267,12 @@ popupContainer.addEventListener("submit", saveChange);
 
 let popupAddPlace = document.querySelector(".popup--add-place");
 let popupAddPlaceOpenBtn = document.querySelector(".main__button_add");
+const popupCloseAddPlaceBtn = document.querySelector("#closeAddPlaceBtn");
+
+popupCloseAddPlaceBtn.addEventListener("click", () => {
+popupAddPlace.classList.remove("popup_opened");
+
+});
 
 function handleOpenAddPlace() {
   popupAddPlace.classList.add("popup_opened");
@@ -278,12 +281,27 @@ function handleOpenAddPlace() {
 popupAddPlaceOpenBtn.addEventListener("click", handleOpenAddPlace);
 
 
+closeEditProfileBtn.addEventListener("click", () => {
 
-let allCloseButtons = document.querySelectorAll(".popup__button_close");
+  popupEditProfile.classList.remove("popup_opened");
+}); 
 
-allCloseButtons.forEach((btn) => {
+
+
+
+
+
+
+//let allCloseButtons = document.querySelectorAll(".popup__button_close");
+
+
+
+
+
+
+/* allCloseButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const popup = btn.closest(".popup");
     popup.classList.remove("popup_opened");
   });
-});
+}); */
