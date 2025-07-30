@@ -94,20 +94,6 @@ sectionCards.prepend(card);
 
   }
 
- /* Mostrar imagen en popup 
-  cardImage.addEventListener("click", function () { 
-
-    const popup = document.getElementById("popupPhoto");
-    const popupImg = popup.querySelector(".popup__photo");
-    const popupTitle = popup.querySelector(".popup__photo-tittle");
-
-    popupImg.src = link;
-    popupImg.alt = `Imagen de ${title}`;
-    popupTitle.textContent = title;
-
-    popup.classList.add("popup_opened");
-  });
-   */ 
 
 function handleOpenEdit() {
   popupInputName.value = mainParagraphName.textContent;
@@ -165,18 +151,6 @@ closeEditProfileBtn.addEventListener("click", () => {
   popupEditProfile.classList.remove("popup_opened");
 }); 
 
-/* const cardImage = card.querySelector(".popup__photo");
-cardImage.src = link;
-cardImage.alt = 'Imagen de ${name}';
-cardImage.addEventListener("click", function() {
-openImage()
-
-}); 
-
-function openImage() {
-  popupImage.classList.add("popup_opened");
-}
-*/ 
 
 const popupExitPhoto = document.getElementById("popupExitPhoto");
 const popupPhoto = document.getElementById("popupPhoto");
