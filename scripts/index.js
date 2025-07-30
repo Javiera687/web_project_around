@@ -1,13 +1,13 @@
-let mainButtonEdit = document.querySelector(".main__button_edit");
-let popupEditProfile = document.querySelector(".popup--edit-profile");
+const mainButtonEdit = document.querySelector(".main__button_edit");
+const popupEditProfile = document.querySelector(".popup--edit-profile");
 const popupButtonClose = document.querySelector("#closeEditProfileBtn")
-let popupContainer = popupEditProfile.querySelector(".popup__container");
-//let popupPhoto = document.querySelector("#popupPhoto");
+const popupContainer = popupEditProfile.querySelector(".popup__container");
 
-let mainParagraphName = document.querySelector(".main__paragraph_name");
-let mainParagraphAbout = document.querySelector(".main__paragraph_about");
-let popupInputName = document.getElementById("input-name-profile");
-let popupInputAbout = document.getElementById("input-about-profile");
+
+const mainParagraphName = document.querySelector(".main__paragraph_name");
+const mainParagraphAbout = document.querySelector(".main__paragraph_about");
+const popupInputName = document.getElementById("input-name-profile");
+const popupInputAbout = document.getElementById("input-about-profile");
 const templateCard = document.querySelector("#template-card");
 const sectionCards = document.querySelector(".main__gallery");
 const popupImage = document.querySelector(".popup__Image");
@@ -43,15 +43,15 @@ initialCards.forEach(function(item) {
     createCard(item.name, item.link);
 });
 
-function createCard(tittle, link) {
+function createCard(title, link) {
    const card = templateCard.content.querySelector(".main__gallery-card").cloneNode(true);
 
    const cardTitle = card.querySelector(".main__gallery-paragraph");
-   cardTitle.textContent = tittle;
+   cardTitle.textContent = title;
 
    const cardImage = card.querySelector(".main__gallery-image");
    cardImage.src = link;
-   cardImage.alt = 'Imagen de ${tittle}';
+   cardImage.alt = `Imagen de ${title}`;
 
    const likeButton = card.querySelector(".main__button_like");
    const likeIcon = card.querySelector(".main__gallery-like");
@@ -77,12 +77,26 @@ function createCard(tittle, link) {
 
    });
 
-      sectionCards.append(card);
+cardImage.addEventListener("click", function () {
+const popup = document.getElementById("popupPhoto");
+const popupImg = popup.querySelector(".popup__photo");
+const popupTitle = popup.querySelector(".popup__photo-title");
+
+popupImg.src = link;
+popupImg.alt = `Imagen de ${title}`; 
+popupTitle.textContent = title; 
+
+popup.classList.add("popup_opened");
+
+});
+
+sectionCards.prepend(card);
 
   }
 
- /* Mostrar imagen en popup
-  cardImage.addEventListener("click", function () {
+ /* Mostrar imagen en popup 
+  cardImage.addEventListener("click", function () { 
+
     const popup = document.getElementById("popupPhoto");
     const popupImg = popup.querySelector(".popup__photo");
     const popupTitle = popup.querySelector(".popup__photo-tittle");
@@ -125,7 +139,25 @@ function handleOpenAddPlace() {
   popupAddPlace.classList.add("popup_opened");
 }
 
+// POP UP PARA AGREGAR UNA IMAGEN 
 popupAddPlaceOpenBtn.addEventListener("click", handleOpenAddPlace);
+
+const formAddPlace = document.querySelector(".popup__form_add");
+const inputTitlePlace = document.getElementById("input-title-place");
+const inputUrlPlace = document.getElementById("input-url-place");
+
+formAddPlace.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const title = inputTitlePlace.value;
+  const url = inputUrlPlace.value;
+
+  createCard(title, url); 
+
+  formAddPlace.reset();
+  popupAddPlace.classList.remove("popup_opened");
+
+});
 
 
 closeEditProfileBtn.addEventListener("click", () => {
@@ -133,23 +165,23 @@ closeEditProfileBtn.addEventListener("click", () => {
   popupEditProfile.classList.remove("popup_opened");
 }); 
 
-const cardImage = card.querySelector(".popup__photo");
+/* const cardImage = card.querySelector(".popup__photo");
 cardImage.src = link;
 cardImage.alt = 'Imagen de ${name}';
 cardImage.addEventListener("click", function() {
 openImage()
 
-});
+}); 
 
 function openImage() {
   popupImage.classList.add("popup_opened");
 }
+*/ 
 
-/*
 const popupExitPhoto = document.getElementById("popupExitPhoto");
 const popupPhoto = document.getElementById("popupPhoto");
 
 
 popupExitPhoto.addEventListener("click", function () {
   popupPhoto.classList.remove("popup_opened");
-}); */
+});

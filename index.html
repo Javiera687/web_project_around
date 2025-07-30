@@ -57,7 +57,9 @@
               &#x1F58C;
             </button>
           </div>
-          <button type="button" class="main__button main__button_add">&#x1F7A3;</button>
+        
+          <button type="button" class="main__button main__button_add">&#x1F7A3;</button> 
+        </div>
           <div class="popup popup--add-place" id="popupAddPlace">
          <button type="button" class="popup__button popup__button_close" id="closeAddPlaceBtn">
           &#x1F7A9;
@@ -95,11 +97,12 @@
       </footer>
     </div>
 <!-- POP UP DE IMAGEN EN GRANDE -->
-    <div class="popup" id="popupPhoto">
-      <button type="button" class="popup__photo-exit" id="popupExitPhoto">X</button>
-      <div class="popup__holder">
+    <div class="popup popup--photo" id="popupPhoto">
+      <div class="popup__photo-container">
+      <button type="button" class="popup__button popup__btn_close" id="popupExitPhoto">X</button>
+     <!-- <div class="popup__photo-container"> -->
         <img class="popup__photo"/>
-        <h2 class="popup__photo-tittle"></h2>
+        <h2 class="popup__photo-title"></h2>
       </div>
     </div>
 

@@ -70,35 +70,31 @@
 }
 
 .main__button_edit {
-  position: absolute;
+  
   width: 24px;
   height: 24px;
   margin-bottom: 7px;
-  top: 208px;
-  left: 706px;
+
   align-self: end;
 }
 
 .main__button_add {
-position: absolute;
+grid-column: 4 / 5;
+grid-row: 1 / 2;
 width: 150px;
 height: 50px;
-top: 208px;
-right: 187px;
-align-self: end;
+margin-top: 20px;
+
   
 }
 
 .main__gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
+  
     max-width: 880px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px 17px;
-    position: absolute;
-    top: 329px;
-    left: 199px;
+
 
 }
 
@@ -113,7 +109,7 @@ align-self: end;
 
 .main__gallery-image {
   height: 282px;
-  width: 100%;
+  width: 282px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
