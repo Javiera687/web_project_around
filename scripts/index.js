@@ -159,3 +159,147 @@ const popupPhoto = document.getElementById("popupPhoto");
 popupExitPhoto.addEventListener("click", function () {
   popupPhoto.classList.remove("popup_opened");
 });
+
+// Cerrar ventana haciendo click en la superposición 
+
+function closeModal(popup) {
+  popup.classList.remove("popup_opened");
+}
+
+const allPopups = document.querySelectorAll(".popup");
+
+allPopups.forEach((popup) => {
+  popup.addEventListener("mousedown", function (evt){
+
+    if (evt.target === popup) {
+      closeModal(popup);
+    }
+  });
+});
+
+// Cierre de popups con la tecla Escape 
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    const popupOpened = document.querySelector(".popup_opened");
+    if (popupOpened) {
+      closeModal(popupOpened);
+    }
+    
+  }
+});
+
+
+const editProfileForm = document.getElementById("editProfileForm");
+const inputName = editProfileForm.elements.name;
+const inputAbout = editProfileForm.elements.about;
+const saveButton = editProfileForm.querySelector(".popup__button_save");
+function showInputError(inputElement, errorElement) {
+  errorElement.textContent = inputElement.validationMessage;
+  inputElement.classList.add("popup__input_type_error");
+}
+
+function hideInputError(inputElement, errorElement) {
+  errorElement.textContent = "";
+  inputElement.classList.remove("popup__input_type_error");
+}
+
+function checkInputValidity(inputElement) {
+  const errorElement = document.getElementById(`${inputElement.id}-error`);
+  if (!inputElement.validity.valid) { 
+    showInputError(inputElement, errorElement);
+  } else {
+    hideInputError(inputElement, errorElement);
+  }
+}
+
+function toggleButtonState() {
+  if (inputName.validity.valid && inputAbout.validity.valid) {
+    saveButton.disabled = false;
+    } else { 
+      saveButton.disabled = true;
+    }
+}
+
+// Validar en tiempo real 
+[inputName, inputAbout].forEach((inputElement) => {
+  inputElement.addEventListener("input", function () {
+    checkInputValidity(inputElement);
+    toggleButtonState();
+  });
+});
+
+function resetFormValidation() {
+[inputName, inputAbout].forEach((inputElement) => {
+  const errorElement = document.getElementById(`${inputElement.id}-error`);
+  hideInputError(inputElement, errorElement);
+});
+
+toggleButtonState();
+}
+
+function handleOpenEdit() {
+  popupInputName.value = mainParagraphName.textContent;
+  popupInputAbout.value = mainParagraphAbout.textContent;
+  popupEditProfile.classList.add("popup_opened");
+  resetFormValidation();
+} 
+
+const addPlaceForm = document.getElementById("addPlaceForm");
+const inputPlaceTitle = addPlaceForm.elements.place;
+const inputPlaceUrl = addPlaceForm.elements.url;
+const createButton = addPlaceForm.querySelector(".popup__button_save");
+
+function showAddPlaceError(inputElement, errorElement) {
+  errorElement.textContent = inputElement.validationMessage;
+  inputElement.classList.add("popup__input_type_error");
+}
+
+function hideAddPlaceError(inputElement, errorElement) {
+  errorElement.textContent = "";
+  inputElement.classList.remove("popup__input_type_error");
+}
+
+function checkAddPlaceInputValidity(inputElement) {
+  const errorElement = document.getElementById(`${inputElement.id}-error`);
+  if (!inputElement.validity.valid) {
+    showAddPlaceError(inputElement, errorElement);
+  } else {
+    hideAddPlaceError(inputElement, errorElement);
+  }
+  }
+
+function toggleCreateButtonState() {
+  if (inputPlaceTitle.validity.valid && inputPlaceUrl.validity.valid) {
+    createButton.disabled = false;
+  } else {
+    createButton.disabled = true;
+  }
+  }
+
+  // Validar en tiempo real 
+
+  [inputPlaceTitle, inputPlaceUrl].forEach((inputElement) => {
+    inputElement.addEventListener("input", function () {
+      checkAddPlaceInputValidity(inputElement);
+      toggleCreateButtonState();
+    });
+  });
+
+  function resetAddPlaceValidation() {
+    [inputPlaceTitle, inputPlaceUrl].forEach((inputElement) => {
+      const errorElement = document.getElementById(`${inputElement.id}-error`);
+      hideAddPlaceError(inputElement, errorElement);
+    });
+
+   toggleCreateButtonState();
+
+  }
+
+  function handleOpenAddPlace() {
+    popupAddPlace.classList.add("popup_opened");
+    resetAddPlaceValidation();
+  }
+
+
+
