@@ -12,3 +12,11 @@ body {
     margin: auto;
 }
 
+@media screen and (min-width: 320px) and (max-width: 585px) {
+
+  body {
+    overflow-x: hidden;
+
+  }
+}
+  

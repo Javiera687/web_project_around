@@ -12,10 +12,10 @@
 <body>
   <div class="page page__container">
       <div class="popup popup--edit-profile" id="popupEditProfile">
-        <button type="button" class="popup__button popup__button_close" id="closeEditProfileBtn">
+        <form class="popup__container" id="editProfileForm" novalidate>
+          <button type="button" class="popup__button popup__button_close" id="closeEditProfileBtn">
           &#x1F7A9;
         </button>
-        <form class="popup__container" id="editProfileForm" novalidate>
           <h2 class="popup__subtitle">Editar perfil</h2>
           <fieldset class="popup__content">
             <input
@@ -71,10 +71,10 @@
           <button type="button" class="main__button main__button_add">&#x1F7A3;</button> 
         </div>
           <div class="popup popup--add-place" id="popupAddPlace">
-         <button type="button" class="popup__button popup__button_close" id="closeAddPlaceBtn">
+           <form class="popup__container popup__form popup__form_add" id="addPlaceForm"  name="add-form">
+            <button type="button" class="popup__button popup__button_close" id="closeAddPlaceBtn">
           &#x1F7A9;
         </button>
-           <form class="popup__container popup__form popup__form_add" id="addPlaceForm"  name="add-form">
           <h2 class="popup__subtitle">Nuevo lugar</h2>
           <fieldset class="popup__content">
             <input

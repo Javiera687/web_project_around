@@ -70,20 +70,17 @@
 }
 
 .main__button_edit {
-  
   width: 24px;
   height: 24px;
   margin-bottom: 7px;
-
   align-self: end;
 }
 
 .main__button_add {
-grid-column: 4 / 5;
-grid-row: 1 / 2;
 width: 150px;
 height: 50px;
-margin-top: 20px;
+align-self: end;
+
 
   
 }
@@ -100,8 +97,7 @@ margin-top: 20px;
 
 .main__gallery-card {
   position: relative;
-  height: 360px;
-  width: 282px;
+  max-width: 290px;
   background-color: #fff;
   color: #000;
   border-radius: 10px;
@@ -114,6 +110,12 @@ margin-top: 20px;
   border-top-right-radius: 10px;
 }
 
+.main__gallery-image:hover { 
+  opacity: 0.9;
+  cursor: pointer;
+
+}
+
 .main__gallery-content {
   display: flex;
   justify-content: space-between;
@@ -122,6 +124,8 @@ margin-top: 20px;
 }
 
 .main__gallery-paragraph {
+  max-width: 230px;
+  height: 25px;
   font-family: "Inter-Black", sans-serif;
   font-size: 24px;
   margin: 0;
@@ -136,13 +140,9 @@ margin-top: 20px;
   overflow: hidden;
 }
 
-.main__gallery-like {
-  width: 19px;
-  height: 19px;
-  object-fit: contain;
-}
 
 .main__button_like {
+  width: 25px;
   border: none;
   height: 19px;
   align-self: flex-end;
@@ -174,19 +174,30 @@ border: none;
     padding-bottom: 30px;
   }
 
+  .main__button_remove {
+    left: auto;
+    right: 10px;
+  }
+
   .main__content-paragraph {
+    width: 100%;
+    text-align: center;
     grid-column: 1 / 2;
     grid-row: 2;
     grid-template-rows: repeat(2, 20px);
   }
 
   .main__paragraph_name {
+    width: 100%;
+    text-align: center;
     font-size: 22px;
     padding: 0;
     line-height: normal;
   }
 
   .main__paragraph_about {
+    width: 100%;
+    text-align: center;
     padding: 0;
     font-size: 14px;
   }
@@ -204,11 +215,17 @@ border: none;
   }
 
   .main__gallery {
-    max-width: 290px;
-    margin: auto;
+    max-width: 100%;
     gap: 20px;
     justify-items: center;
   }
+
+  .main__gallery-card {
+   width: 282px;
+   height: 282px;
+    gap: 20px;
+    justify-items: center;
+ }
 }
 
 @media screen and (min-width: 585px) and (max-width: 880px) {
