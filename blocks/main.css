@@ -97,7 +97,7 @@ align-self: end;
 
 .main__gallery-card {
   position: relative;
-  max-width: 290px;
+  width: 282px;
   background-color: #fff;
   color: #000;
   border-radius: 10px;
@@ -142,10 +142,20 @@ align-self: end;
 
 
 .main__button_like {
-  width: 25px;
+  width: 20px;
   border: none;
-  height: 19px;
+  height: 20px;
   align-self: flex-end;
+  object-fit: contain;
+ 
+}
+
+.main__gallery-like {
+width: 20px;
+ height: 20px;
+ object-fit: contain;
+ position: absolute;
+ bottom: 25px;
 }
 
 .main__button_remove {
@@ -222,7 +232,7 @@ border: none;
 
   .main__gallery-card {
    width: 282px;
-   height: 282px;
+   
     gap: 20px;
     justify-items: center;
  }
