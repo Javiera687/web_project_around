@@ -32,16 +32,6 @@ export default class Card {
         });
     }
 
-
-          //  if (this._likeButton.classList.contains("main__button_like_active")) {
-          //      this._likeIcon.src = "./images/likeblack.png";
-          //  } else { 
-          //      this._likeIcon.src = "./images/like.png";
-          //  }
-
-      //  });
-  //  }
-
     _setRemoveEvent() { 
         this._removeButton.addEventListener("click", () => {
             this._element.remove();
@@ -80,24 +70,3 @@ export default class Card {
 
     }
 }
-
-       /* this._cardTitle = this._element.querySelector(".main__gallery-paragraph");
-        this._cardImage = this._element.querySelector(".main__gallery-image");
-        this._likeButton = this._element.querySelector(".main__button_like");
-        this._likeIcon = this._element.querySelector(".main__gallery-like");
-        this._removeButton = this._element.querySelector(".main__gallery-remove");
-        
-
-
-        this._cardTitle.textContent = this._name; 
-        this._cardImage.src = this._link;
-        this._cardImage.alt = `Imagen de ${this._name}`;
-
-
-        this._setLikeEvent();
-        this._setRemoveEvent();
-        this._setImageEvent();
-
-
-        return this._element;
-    } */
