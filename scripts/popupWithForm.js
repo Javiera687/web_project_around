@@ -39,3 +39,38 @@ export default class PopupWithForm extends Popup {
             this._form.reset();
         }
     }
+
+    /*const popupChangeAvatar = new PopupWithForm("popupChangeAvatar", (formData) => {
+        popupChangeAvatar.setLoading(true);
+
+        api.updateUserAvatar({ avatar:formData.avatar})
+        .then((res) => {
+            UserInfo.updateUserAvatar(res.avatar);
+            popupChangeAvatar.close();
+        })
+        .catch((err) => console.log("X Error cambiando avatar:", err))
+        .finally(() => popupChangeAvatar.setLoading(false));
+    });
+
+    popupChangeAvatar.setEventListeners();*/
+
+    //Popup editar avatar 
+    const popupChangeAvatar = new PopupWithForm("#popupChangeAvatar", (formData) => {
+        popupChangeAvatar.setLoading(true);
+
+        api.updateUserAvatar({ avatar: formData.avatar })
+        .then((res) => {
+            document.querySelector(".main__profile-image").src = res.avatar;
+            popupChangeAvatar.close();
+        })
+        .catch((err) => console.log("X Error cambiando avatar:", err))
+        .finally(() => popupChangeAvatar.setLoading(false));
+    });
+
+    popupChangeAvatar.setEventListeners();
+
+    //Botón que abre el popup 
+    const avatarEditButton = document.querySelector(".main__profile-avatar");
+    avatarEditButton.addEventListener("click", () => {
+        popupChangeAvatar.open();
+    });

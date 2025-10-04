@@ -17,4 +17,8 @@ setUserInfo({ name, about }) {
     this._nameElement.textContent = name;
     this._aboutElement.textContent = about;
 }
+
+setUserAvatar(avatar) {
+    this._avatarElement.src = avatar;
+}
 }

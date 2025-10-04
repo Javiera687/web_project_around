@@ -1,9 +1,11 @@
 export default class Card {
-    constructor(name, link, templateSelector, handleCardClick) {
+    constructor({name, link, cardId}, templateSelector, handleCardClick, handleDeleteClick) {
         this._name = name;
         this._link = link;
+        this._cardId = cardId;
         this._templateSelector = templateSelector;
-        this._handleCardClick = handleCardClick
+        this._handleCardClick = handleCardClick;
+        this._handleDeleteClick = handleDeleteClick;
     }
 
     _getTemplate() {
@@ -33,13 +35,20 @@ export default class Card {
     }
 
     _setRemoveEvent() { 
-        this._removeButton.addEventListener("click", () => {
+        this._removeButton.addEventListener("click", () => { 
+            this._handleDeleteClick(this._cardId, this._element);
+        });
+    }
+
+
+
+        /*this._removeButton.addEventListener("click", () => {
             this._element.remove();
             this._element = null;
 
         });
     }
-
+*/
     _setImageEvent() {
         this._imageElement.addEventListener("click", () => {
             this._handleCardClick(this._name, this._link);
