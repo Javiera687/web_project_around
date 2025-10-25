@@ -40,15 +40,6 @@ export default class Card {
         });
     }
 
-
-
-        /*this._removeButton.addEventListener("click", () => {
-            this._element.remove();
-            this._element = null;
-
-        });
-    }
-*/
     _setImageEvent() {
         this._imageElement.addEventListener("click", () => {
             this._handleCardClick(this._name, this._link);

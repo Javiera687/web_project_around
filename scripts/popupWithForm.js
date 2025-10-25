@@ -40,21 +40,6 @@ export default class PopupWithForm extends Popup {
         }
     }
 
-    /*const popupChangeAvatar = new PopupWithForm("popupChangeAvatar", (formData) => {
-        popupChangeAvatar.setLoading(true);
-
-        api.updateUserAvatar({ avatar:formData.avatar})
-        .then((res) => {
-            UserInfo.updateUserAvatar(res.avatar);
-            popupChangeAvatar.close();
-        })
-        .catch((err) => console.log("X Error cambiando avatar:", err))
-        .finally(() => popupChangeAvatar.setLoading(false));
-    });
-
-    popupChangeAvatar.setEventListeners();*/
-
-    //Popup editar avatar 
     const popupChangeAvatar = new PopupWithForm("#popupChangeAvatar", (formData) => {
         popupChangeAvatar.setLoading(true);
 
